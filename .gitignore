@@ -6,3 +6,9 @@ lib/
 .env
 .env.*
 !.env.example
+
+# Segredos e artefatos locais
+apikey_gemini.txt
+__pycache__/
+**/__pycache__/
+*.pyc

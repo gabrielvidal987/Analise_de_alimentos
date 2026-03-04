@@ -1,0 +1,39 @@
+{
+  "user": "gabriel",
+  "created_at": "2026-02-23T15:15:43.7567949Z",
+  "entries": [
+    {
+      "id": "db54c2a7cb6f41f198319defee74d927",
+      "created_at": "2026-02-23T15:20:26.942122+00:00",
+      "image_filename": "meal1.png",
+      "note": "arroz feijao frango",
+      "analysis": {
+        "meal_name": "refeicao_teste",
+        "confidence": 91,
+        "totals": {
+          "calories_kcal": 620,
+          "protein_g": 42,
+          "carbs_g": 58,
+          "fat_g": 22,
+          "fiber_g": 9,
+          "sodium_mg": 780
+        },
+        "items": [
+          {
+            "name": "frango",
+            "portion": "150g",
+            "calories_kcal": 250,
+            "protein_g": 35,
+            "carbs_g": 0,
+            "fat_g": 8
+          }
+        ],
+        "notes": [
+          "arroz feijao frango"
+        ],
+        "warnings": []
+      },
+      "image_preview_base64": "data:image/png;base64,iVBORw0KGgoxMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTEx"
+    }
+  ]
+}

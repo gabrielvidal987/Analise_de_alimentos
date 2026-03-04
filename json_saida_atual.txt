@@ -1,0 +1,280 @@
+{
+  "resumo": {
+    "total_entradas": 8430.4,
+    "total_saidas": 6227.3,
+    "saldo_final": 2203.1
+  },
+  "entradas": {
+    "categorias": [
+      {
+        "nome_categoria": "Salário",
+        "total_categoria": 7500.0,
+        "itens": [
+          {
+            "nome": "TECH SOLUTIONS",
+            "valor_total": 7500.0,
+            "ocorrencias": 1,
+            "detalhes": [
+              "SALARIO MENSAL - TECH SOLUTIONS"
+            ]
+          }
+        ]
+      },
+      {
+        "nome_categoria": "Investimentos",
+        "total_categoria": 65.4,
+        "itens": [
+          {
+            "nome": "RENDIMENTO CDB - BANCO",
+            "valor_total": 65.4,
+            "ocorrencias": 1,
+            "detalhes": [
+              "RENDIMENTO CDB - BANCO"
+            ]
+          }
+        ]
+      },
+      {
+        "nome_categoria": "Renda Extra",
+        "total_categoria": 320.0,
+        "itens": [
+          {
+            "nome": "MERCADO LIVRE",
+            "valor_total": 320.0,
+            "ocorrencias": 1,
+            "detalhes": [
+              "VENDA MERCADO LIVRE"
+            ]
+          }
+        ]
+      },
+      {
+        "nome_categoria": "Transferências",
+        "total_categoria": 500.0,
+        "itens": [
+          {
+            "nome": "TRANSFERENCIA RECEBIDA - CARLOS",
+            "valor_total": 500.0,
+            "ocorrencias": 1,
+            "detalhes": [
+              "TRANSFERENCIA RECEBIDA - CARLOS"
+            ]
+          }
+        ]
+      },
+      {
+        "nome_categoria": "Outros",
+        "total_categoria": 45.0,
+        "itens": [
+          {
+            "nome": "RESTITUIÇÃO DE TAXA",
+            "valor_total": 45.0,
+            "ocorrencias": 1,
+            "detalhes": [
+              "RESTITUIÇÃO DE TAXA"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "saidas": {
+    "categorias": [
+      {
+        "nome_categoria": "Moradia",
+        "total_categoria": 3083.4,
+        "itens": [
+          {
+            "nome": "ALUGUEL RESIDENCIAL",
+            "valor_total": 2800.0,
+            "ocorrencias": 1,
+            "detalhes": [
+              "ALUGUEL RESIDENCIAL"
+            ]
+          },
+          {
+            "nome": "ENEL",
+            "valor_total": 195.4,
+            "ocorrencias": 1,
+            "detalhes": [
+              "ENEL - CONTA DE LUZ"
+            ]
+          },
+          {
+            "nome": "SABESP",
+            "valor_total": 88.0,
+            "ocorrencias": 1,
+            "detalhes": [
+              "SABESP - CONTA DE AGUA"
+            ]
+          }
+        ]
+      },
+      {
+        "nome_categoria": "Alimentação",
+        "total_categoria": 679.9,
+        "itens": [
+          {
+            "nome": "IFOOD.COM",
+            "valor_total": 399.9,
+            "ocorrencias": 6,
+            "detalhes": [
+              "IFOOD.COM - MCDONALDS",
+              "IFOOD.COM - PIZZARIA DA NONA",
+              "IFOOD.COM - SUSHI BAR",
+              "IFOOD.COM - PADARIA",
+              "IFOOD.COM - BURGER KING",
+              "IFOOD.COM - DOCERIA"
+            ]
+          },
+          {
+            "nome": "RESTAURANTE COCO BAMBU",
+            "valor_total": 280.0,
+            "ocorrencias": 1,
+            "detalhes": [
+              "RESTAURANTE COCO BAMBU"
+            ]
+          }
+        ]
+      },
+      {
+        "nome_categoria": "Transporte",
+        "total_categoria": 758.0,
+        "itens": [
+          {
+            "nome": "UBER",
+            "valor_total": 178.0,
+            "ocorrencias": 8,
+            "detalhes": [
+              "UBER *UBER TRIP",
+              "UBER *UBER TRIP",
+              "UBER *UBER TRIP",
+              "UBER *UBER TRIP",
+              "UBER *UBER TRIP",
+              "UBER *UBER TRIP",
+              "UBER *UBER TRIP",
+              "UBER *UBER TRIP"
+            ]
+          },
+          {
+            "nome": "POSTO SHELL",
+            "valor_total": 430.0,
+            "ocorrencias": 2,
+            "detalhes": [
+              "POSTO SHELL - COMBUSTIVEL",
+              "POSTO SHELL - COMBUSTIVEL"
+            ]
+          },
+          {
+            "nome": "REDE CANAÃ",
+            "valor_total": 150.0,
+            "ocorrencias": 1,
+            "detalhes": [
+              "REDE CANAÃ - GASOLINA"
+            ]
+          }
+        ]
+      },
+      {
+        "nome_categoria": "Mercado",
+        "total_categoria": 458.5,
+        "itens": [
+          {
+            "nome": "SUPERMERCADO DIA",
+            "valor_total": 458.5,
+            "ocorrencias": 3,
+            "detalhes": [
+              "SUPERMERCADO DIA - COMPRAS",
+              "SUPERMERCADO DIA - LIMPEZA",
+              "SUPERMERCADO DIA - ADEGA"
+            ]
+          }
+        ]
+      },
+      {
+        "nome_categoria": "Compras/Variados",
+        "total_categoria": 837.5,
+        "itens": [
+          {
+            "nome": "AMAZON.COM",
+            "valor_total": 837.5,
+            "ocorrencias": 5,
+            "detalhes": [
+              "AMAZON.COM - LIVROS",
+              "AMAZON.COM - PRODUTOS PET",
+              "AMAZON.COM - ELETRONICOS",
+              "AMAZON.COM - UTENSILIOS",
+              "AMAZON.COM - CUIDADOS PESSOAIS"
+            ]
+          }
+        ]
+      },
+      {
+        "nome_categoria": "Assinaturas",
+        "total_categoria": 77.8,
+        "itens": [
+          {
+            "nome": "NETFLIX",
+            "valor_total": 55.9,
+            "ocorrencias": 1,
+            "detalhes": [
+              "NETFLIX ASSINATURA"
+            ]
+          },
+          {
+            "nome": "SPOTIFY",
+            "valor_total": 21.9,
+            "ocorrencias": 1,
+            "detalhes": [
+              "SPOTIFY ASSINATURA"
+            ]
+          }
+        ]
+      },
+      {
+        "nome_categoria": "Saúde e Bem-estar",
+        "total_categoria": 287.2,
+        "itens": [
+          {
+            "nome": "FARMACIA RAIA",
+            "valor_total": 42.3,
+            "ocorrencias": 1,
+            "detalhes": [
+              "FARMACIA RAIA"
+            ]
+          },
+          {
+            "nome": "DROGASIL",
+            "valor_total": 125.0,
+            "ocorrencias": 1,
+            "detalhes": [
+              "DROGASIL - MEDICAMENTOS"
+            ]
+          },
+          {
+            "nome": "ACADEMIA SMART FIT",
+            "valor_total": 119.9,
+            "ocorrencias": 1,
+            "detalhes": [
+              "ACADEMIA SMART FIT"
+            ]
+          }
+        ]
+      },
+      {
+        "nome_categoria": "Taxas Bancárias",
+        "total_categoria": 45.0,
+        "itens": [
+          {
+            "nome": "TARIFA BANCARIA",
+            "valor_total": 45.0,
+            "ocorrencias": 1,
+            "detalhes": [
+              "TARIFA BANCARIA"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

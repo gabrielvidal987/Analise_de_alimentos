@@ -1,0 +1,8 @@
+# Dependencias locais
+libs/
+lib/
+
+# Variaveis de ambiente
+.env
+.env.*
+!.env.example

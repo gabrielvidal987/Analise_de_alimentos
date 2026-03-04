@@ -1,0 +1,219 @@
+{
+  "user": "pamela",
+  "created_at": "2026-02-23T15:15:43.7567949Z",
+  "entries": [
+    {
+      "id": "11abebd55c094932b778cbe2ae27978b",
+      "created_at": "2026-02-23T15:20:26.952215+00:00",
+      "image_filename": "meal2.png",
+      "note": "salada com atum",
+      "analysis": {
+        "meal_name": "refeicao_teste",
+        "confidence": 91,
+        "totals": {
+          "calories_kcal": 620,
+          "protein_g": 42,
+          "carbs_g": 58,
+          "fat_g": 22,
+          "fiber_g": 9,
+          "sodium_mg": 780
+        },
+        "items": [
+          {
+            "name": "frango",
+            "portion": "150g",
+            "calories_kcal": 250,
+            "protein_g": 35,
+            "carbs_g": 0,
+            "fat_g": 8
+          }
+        ],
+        "notes": [
+          "salada com atum"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "id": "8e0ac80fefa747329e14e59d85c85cdd",
+      "created_at": "2026-02-23T15:21:08.985628+00:00",
+      "image_filename": "a.png",
+      "note": "teste",
+      "analysis": {
+        "meal_name": "ok",
+        "confidence": 90,
+        "totals": {
+          "calories_kcal": 1,
+          "protein_g": 1,
+          "carbs_g": 1,
+          "fat_g": 1,
+          "fiber_g": 1,
+          "sodium_mg": 1
+        },
+        "items": [],
+        "notes": [
+          "teste"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "id": "978bf273c0f445139475d767e5d9d4f6",
+      "created_at": "2026-02-23T22:43:28.890762+00:00",
+      "image_filename": "crepioca-de-queijo-com-tomate-e-oregano-SqWSX6ZG-scaled.webp",
+      "note": "crepeoca com queijo e tomate",
+      "analysis": {
+        "meal_name": "Crepioca com queijo e tomate",
+        "confidence": 0.85,
+        "totals": {
+          "calories_kcal": 295.0,
+          "protein_g": 14.2,
+          "carbs_g": 27.5,
+          "fat_g": 14.0,
+          "fiber_g": 0.8,
+          "sodium_mg": 320.0
+        },
+        "items": [
+          {
+            "name": "Ovo de galinha",
+            "portion": "1 unidade grande",
+            "calories_kcal": 74.0,
+            "protein_g": 6.3,
+            "carbs_g": 0.4,
+            "fat_g": 5.0
+          },
+          {
+            "name": "Goma de tapioca",
+            "portion": "2 colheres de sopa (30g)",
+            "calories_kcal": 102.0,
+            "protein_g": 0.0,
+            "carbs_g": 25.0,
+            "fat_g": 0.0
+          },
+          {
+            "name": "Queijo branco (tipo Minas ou Muçarela)",
+            "portion": "40g",
+            "calories_kcal": 114.0,
+            "protein_g": 7.8,
+            "carbs_g": 1.1,
+            "fat_g": 8.8
+          },
+          {
+            "name": "Tomate",
+            "portion": "20g",
+            "calories_kcal": 5.0,
+            "protein_g": 0.1,
+            "carbs_g": 1.0,
+            "fat_g": 0.2
+          }
+        ],
+        "notes": [
+          "Estimativa baseada em uma receita padrão de crepioca utilizando 1 ovo e 2 colheres de sopa de tapioca.",
+          "O queijo visualizado apresenta derretimento característico de queijos brancos ou muçarela.",
+          "Presença de temperos secos (possivelmente orégano) na massa."
+        ],
+        "warnings": [
+          "A densidade calórica pode aumentar se a frigideira foi untada com manteiga ou óleo.",
+          "Variações no tipo de queijo (ex: queijo prato vs queijo minas frescal) alteram significativamente o teor de gordura."
+        ]
+      }
+    },
+    {
+      "id": "91f8e00925194e63a587c17d28ce9164",
+      "created_at": "2026-02-23T22:51:09.362365+00:00",
+      "image_filename": "images.jpg",
+      "note": "esfiha de dois queijos (mussarela amarela e catupiry)\r\n",
+      "analysis": {
+        "meal_name": "Esfiha de Dois Queijos (Mussarela e Catupiry)",
+        "confidence": 0.85,
+        "totals": {
+          "calories_kcal": 265.0,
+          "protein_g": 11.5,
+          "carbs_g": 24.0,
+          "fat_g": 13.5,
+          "fiber_g": 1.2,
+          "sodium_mg": 490.0
+        },
+        "items": [
+          {
+            "name": "Esfiha aberta de dois queijos",
+            "portion": "1 unidade (aprox. 95g)",
+            "calories_kcal": 265.0,
+            "protein_g": 11.5,
+            "carbs_g": 24.0,
+            "fat_g": 13.5
+          }
+        ],
+        "notes": [
+          "Estimativa baseada em uma esfiha de tamanho padrão comercial (aprox. 9-10cm de diâmetro).",
+          "A massa de farinha branca contribui majoritariamente para os carboidratos.",
+          "O mix de mussarela e catupiry eleva o teor de gorduras saturadas e sódio."
+        ],
+        "warnings": [
+          "Alimento com alta densidade calórica e alto teor de sódio.",
+          "Contém glúten e lactose."
+        ]
+      }
+    },
+    {
+      "id": "2162b1069b9647b29553098d5b003992",
+      "created_at": "2026-02-23T23:27:49.621948+00:00",
+      "image_filename": "crepioca-de-queijo-com-tomate-e-oregano-SqWSX6ZG-scaled.webp",
+      "note": "crepeoca de queijo com tomate",
+      "analysis": {
+        "meal_name": "Crepioca de queijo com tomate",
+        "confidence": 0.85,
+        "totals": {
+          "calories_kcal": 272.0,
+          "protein_g": 13.1,
+          "carbs_g": 26.9,
+          "fat_g": 13.0,
+          "fiber_g": 0.5,
+          "sodium_mg": 250.0
+        },
+        "items": [
+          {
+            "name": "Ovo",
+            "portion": "1 unidade grande (50g)",
+            "calories_kcal": 70.0,
+            "protein_g": 6.0,
+            "carbs_g": 0.5,
+            "fat_g": 5.0
+          },
+          {
+            "name": "Goma de tapioca",
+            "portion": "2 colheres de sopa (30g)",
+            "calories_kcal": 100.0,
+            "protein_g": 0.0,
+            "carbs_g": 25.0,
+            "fat_g": 0.0
+          },
+          {
+            "name": "Queijo branco (tipo Minas)",
+            "portion": "40g",
+            "calories_kcal": 100.0,
+            "protein_g": 7.0,
+            "carbs_g": 1.0,
+            "fat_g": 8.0
+          },
+          {
+            "name": "Tomate",
+            "portion": "10g",
+            "calories_kcal": 2.0,
+            "protein_g": 0.1,
+            "carbs_g": 0.4,
+            "fat_g": 0.0
+          }
+        ],
+        "notes": [
+          "Estimativa baseada em uma receita padrão de crepioca utilizando 1 ovo e 2 colheres de sopa de goma.",
+          "O queijo foi identificado visualmente como queijo branco/minas frescal devido à textura e cor."
+        ],
+        "warnings": [
+          "A quantidade exata de tapioca e o teor de gordura do queijo podem alterar significativamente os valores calóricos.",
+          "Não foi considerada a adição de óleo ou manteiga para untar a frigideira."
+        ]
+      }
+    }
+  ]
+}

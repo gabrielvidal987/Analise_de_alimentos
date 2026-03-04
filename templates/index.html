@@ -1,0 +1,675 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NutriLens IA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-1: #f8fafc;
+      --bg-2: #eef2ff;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #0f766e;
+      --accent-2: #14b8a6;
+      --danger: #b91c1c;
+      --line: #e2e8f0;
+      --shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 10% 10%, #c7d2fe 0%, transparent 35%),
+                  radial-gradient(circle at 90% 0%, #99f6e4 0%, transparent 30%),
+                  linear-gradient(180deg, var(--bg-2), var(--bg-1));
+      min-height: 100vh;
+    }
+
+    .page {
+      width: min(760px, 100%);
+      margin: 0 auto;
+      padding: 20px 14px 40px;
+    }
+
+    .hero {
+      text-align: left;
+      margin-bottom: 14px;
+      animation: fadeUp .45s ease;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.5rem, 6vw, 2rem);
+      margin: 0;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin: 8px 0 0;
+      font-size: .95rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(148, 163, 184, .2);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 16px;
+      animation: fadeUp .45s ease;
+      margin-bottom: 12px;
+    }
+
+    label {
+      display: block;
+      font-size: .82rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    input, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px;
+      font: inherit;
+      color: var(--text);
+      background: #fff;
+    }
+
+    textarea { min-height: 84px; resize: vertical; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    button {
+      border: none;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: .65;
+      cursor: not-allowed;
+      filter: saturate(.7);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #fff;
+      flex: 1;
+    }
+
+    .btn-secondary {
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--text);
+    }
+
+    .btn-danger {
+      background: #fff;
+      border: 1px solid #fecaca;
+      color: var(--danger);
+    }
+
+    .hidden { display: none !important; }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: .75rem;
+      font-weight: 700;
+      background: #ecfeff;
+      color: #0f766e;
+      margin-bottom: 10px;
+    }
+
+    .file-upload-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 2px;
+    }
+
+    .file-upload-input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .file-upload-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 14px;
+      border-radius: 12px;
+      border: 1px solid #99f6e4;
+      background: linear-gradient(135deg, #ccfbf1, #f0fdfa);
+      color: #0f766e;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .file-upload-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(20, 184, 166, .18);
+      border-color: #5eead4;
+    }
+
+    .file-upload-btn:active {
+      transform: translateY(0);
+    }
+
+    .file-upload-name {
+      font-size: .85rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .nutrition-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .nutri-item {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px;
+      background: #f8fafc;
+    }
+
+    .nutri-item strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+
+    .nutri-item span {
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    .entry {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 8px;
+      margin-top: 10px;
+      background: #fff;
+    }
+
+    .entry-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .entry small {
+      color: var(--muted);
+    }
+
+    .history-toggle {
+      width: 100%;
+      text-align: left;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      color: var(--text);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .history-toggle-main {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .history-toggle-title {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .history-toggle-date {
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .history-toggle:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+    }
+
+    .history-toggle[aria-expanded="true"] {
+      background: #f0fdfa;
+      border-color: #99f6e4;
+    }
+
+    .history-content {
+      margin-top: 8px;
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fcfdff;
+    }
+
+    .error {
+      margin-top: 10px;
+      color: var(--danger);
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (min-width: 760px) {
+      .page { padding-top: 32px; }
+      .grid-2 { grid-template-columns: 1fr 1fr; }
+      .nutrition-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <h1>NutriLens IA</h1>
+      <p>Envie foto da refeição e receba calorias, proteínas e macronutrientes em segundos.</p>
+    </header>
+
+    <section class="card" id="loginCard">
+      <div class="pill">Use as credenciais configuradas no servidor</div>
+      <div class="grid-2">
+        <div>
+          <label for="username">Usuário</label>
+          <input id="username" placeholder="Seu usuario" autocomplete="username" />
+        </div>
+        <div>
+          <label for="password">Senha</label>
+          <input id="password" type="password" placeholder="Sua senha" autocomplete="current-password" />
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn-primary" id="loginBtn">Entrar</button>
+      </div>
+      <div class="error" id="loginError"></div>
+    </section>
+
+    <section class="card hidden" id="appCard">
+      <div class="entry-top">
+        <div>
+          <div class="pill" id="loggedUserPill"></div>
+        </div>
+        <button class="btn-danger" id="logoutBtn">Sair</button>
+      </div>
+
+      <label for="mealImage">Foto da refeição</label>
+      <div class="file-upload-row">
+        <input class="file-upload-input" id="mealImage" type="file" accept="image/*" capture="environment" />
+        <label class="file-upload-btn" for="mealImage">
+          <span>📎</span>
+          <span>Anexar imagem</span>
+        </label>
+        <small class="file-upload-name" id="selectedImageName">Nenhum arquivo selecionado</small>
+      </div>
+
+      <label for="mealNote" style="margin-top:10px">Descrição opcional</label>
+      <textarea id="mealNote" placeholder="Exemplo: arroz, feijão, frango grelhado e salada"></textarea>
+
+      <div class="actions">
+        <button class="btn-primary" id="analyzeBtn">Analisar refeição</button>
+      </div>
+      <div class="error" id="analyzeError"></div>
+    </section>
+
+    <section class="card hidden" id="resultCard">
+      <h3 style="margin:0 0 8px">Resultado da última análise</h3>
+      <div id="latestResult"></div>
+    </section>
+
+    <section class="card hidden" id="historyCard">
+      <h3 style="margin:0 0 8px">Histórico do usuário</h3>
+      <div id="historyList"></div>
+    </section>
+  </div>
+
+  <script>
+    const API_BASE = window.location.origin;
+
+    const loginCard = document.getElementById('loginCard');
+    const appCard = document.getElementById('appCard');
+    const resultCard = document.getElementById('resultCard');
+    const historyCard = document.getElementById('historyCard');
+
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const loginBtn = document.getElementById('loginBtn');
+    const logoutBtn = document.getElementById('logoutBtn');
+
+    const mealImageInput = document.getElementById('mealImage');
+    const selectedImageName = document.getElementById('selectedImageName');
+    const mealNoteInput = document.getElementById('mealNote');
+    const analyzeBtn = document.getElementById('analyzeBtn');
+
+    const loginError = document.getElementById('loginError');
+    const analyzeError = document.getElementById('analyzeError');
+    const loggedUserPill = document.getElementById('loggedUserPill');
+    const latestResult = document.getElementById('latestResult');
+    const historyList = document.getElementById('historyList');
+
+    let authToken = localStorage.getItem('nutrilens_token') || '';
+    let authUser = localStorage.getItem('nutrilens_user') || '';
+
+    function formatNumber(value, suffix = '') {
+      const n = Number(value || 0);
+      return `${n.toLocaleString('pt-BR', { maximumFractionDigits: 1 })}${suffix}`;
+    }
+
+    function formatConfidence(value) {
+      if (value === null || value === undefined || Number.isNaN(Number(value))) return '-';
+      const numeric = Number(value);
+      const percent = numeric <= 1 ? numeric * 100 : numeric;
+      const clamped = Math.max(0, Math.min(100, percent));
+      return `${clamped.toFixed(0)}%`;
+    }
+
+    function setLoggedInUI(isLogged) {
+      loginCard.classList.toggle('hidden', isLogged);
+      appCard.classList.toggle('hidden', !isLogged);
+      historyCard.classList.toggle('hidden', !isLogged);
+      if (isLogged) {
+        loggedUserPill.textContent = `Sessão: ${authUser}`;
+      }
+    }
+
+    async function api(path, options = {}) {
+      const headers = options.headers || {};
+      if (authToken) headers.Authorization = `Bearer ${authToken}`;
+      return fetch(`${API_BASE}${path}`, { ...options, headers });
+    }
+
+    function renderResult(entry) {
+      const totals = entry?.analysis?.totals || {};
+      const items = Array.isArray(entry?.analysis?.items) ? entry.analysis.items : [];
+      const notes = Array.isArray(entry?.analysis?.notes) ? entry.analysis.notes : [];
+      const warnings = Array.isArray(entry?.analysis?.warnings) ? entry.analysis.warnings : [];
+      latestResult.innerHTML = `
+        <div class="nutrition-grid">
+          <div class="nutri-item"><strong>${formatNumber(totals.calories_kcal, ' kcal')}</strong><span>Calorias</span></div>
+          <div class="nutri-item"><strong>${formatNumber(totals.protein_g, ' g')}</strong><span>Proteínas</span></div>
+          <div class="nutri-item"><strong>${formatNumber(totals.carbs_g, ' g')}</strong><span>Carboidratos</span></div>
+          <div class="nutri-item"><strong>${formatNumber(totals.fat_g, ' g')}</strong><span>Gorduras</span></div>
+          <div class="nutri-item"><strong>${formatNumber(totals.fiber_g, ' g')}</strong><span>Fibras</span></div>
+          <div class="nutri-item"><strong>${formatNumber(totals.sodium_mg, ' mg')}</strong><span>Sódio</span></div>
+        </div>
+        <div style="margin-top:10px">
+          <strong>Itens identificados:</strong>
+          <div>${items.length ? items.map(item => `${item.name || 'Item'} (${item.portion || 'porção'})`).join(', ') : 'Não informado'}</div>
+        </div>
+        <div style="margin-top:8px">
+          <strong>Observações:</strong>
+          <div>${notes.length ? notes.join(' | ') : 'Sem observações'}</div>
+        </div>
+        <div style="margin-top:8px">
+          <strong>Avisos:</strong>
+          <div>${warnings.length ? warnings.join(' | ') : 'Sem avisos'}</div>
+        </div>
+        <div style="margin-top:8px">
+          <strong>Confiança da IA:</strong>
+          <div>${formatConfidence(entry?.analysis?.confidence)}</div>
+        </div>
+      `;
+
+      resultCard.classList.remove('hidden');
+    }
+
+    function renderHistory(entries) {
+      if (!entries.length) {
+        historyList.innerHTML = '<small>Nenhuma análise ainda.</small>';
+        return;
+      }
+
+      historyList.innerHTML = entries.map((entry, index) => {
+        const t = entry?.analysis?.totals || {};
+        const created = new Date(entry.created_at).toLocaleString('pt-BR');
+        return `
+          <article class="entry">
+            <button class="history-toggle" type="button" data-target="history-content-${index}" aria-expanded="false">
+              <span class="history-toggle-main">
+                <strong class="history-toggle-title">${entry.analysis?.meal_name || 'Refeição'}</strong>
+                <small class="history-toggle-date">${created}</small>
+              </span>
+              <span class="history-toggle-arrow">▼</span>
+            </button>
+            <div class="history-content hidden" id="history-content-${index}">
+              <div class="entry-top">
+                <small>${created}</small>
+              </div>
+              <small><strong>Confiança IA:</strong> ${formatConfidence(entry?.analysis?.confidence)}</small>
+              <br />
+              <small>${entry.note ? `Descrição: ${entry.note}` : 'Sem descrição adicional'}</small>
+              <div class="nutrition-grid" style="margin-top:8px">
+                <div class="nutri-item"><strong>${formatNumber(t.calories_kcal, ' kcal')}</strong><span>Calorias</span></div>
+                <div class="nutri-item"><strong>${formatNumber(t.protein_g, ' g')}</strong><span>Proteínas</span></div>
+                <div class="nutri-item"><strong>${formatNumber(t.carbs_g, ' g')}</strong><span>Carboidratos</span></div>
+                <div class="nutri-item"><strong>${formatNumber(t.fat_g, ' g')}</strong><span>Gorduras</span></div>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    async function loadHistory() {
+      const response = await api('/api/history');
+      if (!response.ok) {
+        throw new Error('Não foi possível carregar histórico');
+      }
+
+      const payload = await response.json();
+      renderHistory(payload.entries || []);
+    }
+
+    async function doLogin() {
+      if (loginBtn.disabled) return;
+      loginError.textContent = '';
+      const username = usernameInput.value.trim().toLowerCase();
+      const password = passwordInput.value;
+
+      if (!username || !password) {
+        loginError.textContent = 'Informe usuário e senha.';
+        return;
+      }
+
+      loginBtn.disabled = true;
+      loginBtn.textContent = 'Entrando...';
+      try {
+        const response = await fetch(`${API_BASE}/api/login`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+
+        if (!response.ok) {
+          const err = await response.json().catch(() => ({}));
+          throw new Error(err.detail || 'Falha no login');
+        }
+
+        const payload = await response.json();
+        authToken = payload.token;
+        authUser = payload.user;
+
+        localStorage.setItem('nutrilens_token', authToken);
+        localStorage.setItem('nutrilens_user', authUser);
+
+        setLoggedInUI(true);
+        await loadHistory();
+      } catch (error) {
+        loginError.textContent = error.message || 'Erro no login';
+      } finally {
+        loginBtn.disabled = false;
+        loginBtn.textContent = 'Entrar';
+      }
+    }
+
+    loginBtn.addEventListener('click', doLogin);
+
+    [usernameInput, passwordInput].forEach((input) => {
+      input.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          doLogin();
+        }
+      });
+    });
+
+    logoutBtn.addEventListener('click', async () => {
+      try {
+        await api('/api/logout', { method: 'POST' });
+      } catch (_) {}
+
+      authToken = '';
+      authUser = '';
+      localStorage.removeItem('nutrilens_token');
+      localStorage.removeItem('nutrilens_user');
+      resultCard.classList.add('hidden');
+      historyList.innerHTML = '';
+      setLoggedInUI(false);
+    });
+
+    mealImageInput.addEventListener('change', () => {
+      const file = mealImageInput.files?.[0];
+      if (!file) {
+        selectedImageName.textContent = 'Nenhum arquivo selecionado';
+        return;
+      }
+      selectedImageName.textContent = file.name;
+    });
+
+    historyList.addEventListener('click', (event) => {
+      const toggleBtn = event.target.closest('.history-toggle');
+      if (!toggleBtn) return;
+
+      const targetId = toggleBtn.getAttribute('data-target');
+      const targetContent = targetId ? document.getElementById(targetId) : null;
+      if (!targetContent) return;
+
+      const isOpening = targetContent.classList.contains('hidden');
+
+      historyList.querySelectorAll('.history-content').forEach((content) => {
+        content.classList.add('hidden');
+      });
+      historyList.querySelectorAll('.history-toggle').forEach((btn) => {
+        btn.setAttribute('aria-expanded', 'false');
+        const arrow = btn.querySelector('.history-toggle-arrow');
+        if (arrow) arrow.textContent = '▼';
+      });
+
+      if (isOpening) {
+        targetContent.classList.remove('hidden');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        const arrow = toggleBtn.querySelector('.history-toggle-arrow');
+        if (arrow) arrow.textContent = '▲';
+      }
+    });
+
+    analyzeBtn.addEventListener('click', async () => {
+      if (analyzeBtn.disabled) return;
+      analyzeError.textContent = '';
+      const file = mealImageInput.files?.[0];
+
+      if (!file) {
+        analyzeError.textContent = 'Selecione uma imagem da refeição.';
+        return;
+      }
+
+      analyzeBtn.disabled = true;
+      analyzeBtn.textContent = 'Analisando...';
+
+      try {
+        const formData = new FormData();
+        formData.append('image', file);
+        formData.append('note', mealNoteInput.value || '');
+
+        const response = await api('/api/analyze-meal', {
+          method: 'POST',
+          body: formData,
+        });
+
+        if (!response.ok) {
+          const err = await response.json().catch(() => ({}));
+          throw new Error(err.detail || 'Erro ao analisar refeição');
+        }
+
+        const payload = await response.json();
+        renderResult(payload.entry);
+        await loadHistory();
+        selectedImageName.textContent = 'Nenhum arquivo selecionado';
+        mealImageInput.value = '';
+      } catch (error) {
+        analyzeError.textContent = error.message || 'Erro ao analisar';
+      } finally {
+        analyzeBtn.disabled = false;
+        analyzeBtn.textContent = 'Analisar refeição';
+      }
+    });
+
+    if (authToken && authUser) {
+      setLoggedInUI(true);
+      loadHistory().catch(() => {
+        authToken = '';
+        authUser = '';
+        localStorage.removeItem('nutrilens_token');
+        localStorage.removeItem('nutrilens_user');
+        setLoggedInUI(false);
+      });
+    } else {
+      setLoggedInUI(false);
+    }
+  </script>
+</body>
+</html>
